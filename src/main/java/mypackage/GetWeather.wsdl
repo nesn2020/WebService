@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mypackage" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mypackage" xmlns:intf="http://mypackage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mypackage" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="obj" type="xsd:anyType"/>
+   <element name="equalsReturn" type="xsd:boolean"/>
+   <element name="hashCodeReturn" type="xsd:int"/>
+   <element name="getTheCityCodeReturn" type="xsd:string"/>
+   <element name="theUserID" type="xsd:string"/>
+   <element name="getTheUserIDReturn" type="xsd:string"/>
+   <element name="theCityCode" type="xsd:string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="hashCodeResponse">
+
+      <wsdl:part element="impl:hashCodeReturn" name="hashCodeReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="hashCodeRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="setTheUserIDRequest">
+
+      <wsdl:part element="impl:theUserID" name="theUserID"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTheUserIDRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsRequest">
+
+      <wsdl:part element="impl:obj" name="obj"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTheUserIDResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getTheCityCodeRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="setTheCityCodeRequest">
+
+      <wsdl:part element="impl:theCityCode" name="theCityCode"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTheUserIDResponse">
+
+      <wsdl:part element="impl:getTheUserIDReturn" name="getTheUserIDReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTheCityCodeResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getTheCityCodeResponse">
+
+      <wsdl:part element="impl:getTheCityCodeReturn" name="getTheCityCodeReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsResponse">
+
+      <wsdl:part element="impl:equalsReturn" name="equalsReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetWeather">
+
+      <wsdl:operation name="equals" parameterOrder="obj">
+
+         <wsdl:input message="impl:equalsRequest" name="equalsRequest"/>
+
+         <wsdl:output message="impl:equalsResponse" name="equalsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdl:input message="impl:hashCodeRequest" name="hashCodeRequest"/>
+
+         <wsdl:output message="impl:hashCodeResponse" name="hashCodeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTheCityCode">
+
+         <wsdl:input message="impl:getTheCityCodeRequest" name="getTheCityCodeRequest"/>
+
+         <wsdl:output message="impl:getTheCityCodeResponse" name="getTheCityCodeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTheUserID" parameterOrder="theUserID">
+
+         <wsdl:input message="impl:setTheUserIDRequest" name="setTheUserIDRequest"/>
+
+         <wsdl:output message="impl:setTheUserIDResponse" name="setTheUserIDResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTheUserID">
+
+         <wsdl:input message="impl:getTheUserIDRequest" name="getTheUserIDRequest"/>
+
+         <wsdl:output message="impl:getTheUserIDResponse" name="getTheUserIDResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTheCityCode" parameterOrder="theCityCode">
+
+         <wsdl:input message="impl:setTheCityCodeRequest" name="setTheCityCodeRequest"/>
+
+         <wsdl:output message="impl:setTheCityCodeResponse" name="setTheCityCodeResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GetWeatherSoapBinding" type="impl:GetWeather">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="equals">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="equalsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="equalsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="hashCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="hashCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTheCityCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTheCityCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTheCityCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTheUserID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTheUserIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTheUserIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTheUserID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTheUserIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTheUserIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTheCityCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTheCityCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTheCityCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GetWeatherService">
+
+      <wsdl:port binding="impl:GetWeatherSoapBinding" name="GetWeather">
+
+         <wsdlsoap:address location="http://localhost:8080//services/mypackage/GetWeather"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
